@@ -29,10 +29,17 @@ const Home = () => {
       </Link> */}
 
       <TouchableOpacity
-        className="bg-sky-500 py-2 px-3 rounded-md"
+        className="bg-green-500 py-2 px-3 rounded-md mb-3"
         onPress={() => router.push("/about")}
       >
         <Text className="text-white">Go to About</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        className="bg-sky-500 py-2 px-3 rounded-md mb-3"
+        onPress={() => router.push("/tabs")}
+      >
+        <Text className="text-white">Go to Tab Screen</Text>
       </TouchableOpacity>
     </Animated.View>
   );
