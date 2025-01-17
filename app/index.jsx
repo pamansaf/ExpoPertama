@@ -9,8 +9,11 @@ import Animated, {
   ZoomIn,
   ZoomOut,
 } from "react-native-reanimated";
+import { useDrawerStatus } from "@react-navigation/drawer";
+
 const Home = () => {
   const router = useRouter();
+  const isDrawerOpen = useDrawerStatus() === "open";
   return (
     <Animated.View
       // entering={FadeIn.duration(300)}
@@ -19,7 +22,14 @@ const Home = () => {
       exiting={ZoomOut.duration(300)}
       className="flex-1 justify-center items-center"
     >
-      <Text className="bg-yellow-300 p-3 text-red-500 text-2xl font-bold mb-3">
+      {isDrawerOpen ? (
+        <Text className="text-2xl text-green-500 font-bold">
+          Drawer is open
+        </Text>
+      ) : (
+        <Text className="text-2xl text-red-500 font-bold">Drawer is close</Text>
+      )}
+      <Text className="bg-yellow-300 p-3 text-red-500 text-2xl font-bold my-3">
         Home
       </Text>
       {/* <Link href="/about" asChild>
