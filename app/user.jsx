@@ -9,18 +9,18 @@ import Animated, {
   ZoomIn,
   ZoomOut,
 } from "react-native-reanimated";
-const about = () => {
+const user = () => {
   const router = useRouter();
   return (
     <Animated.View
       // entering={FadeIn.duration(500)}
       // exiting={FadeOut.duration(500)}
-      entering={ZoomIn.duration(300)}
-      exiting={ZoomOut.duration(300)}
+      entering={ZoomIn.duration(500)}
+      exiting={ZoomOut.duration(500)}
       className="flex-1 justify-center items-center"
     >
-      <Text className="bg-sky-300 p-3 text-black-500 text-2xl font-bold mb-3">
-        About
+      <Text className="bg-pink-300 p-3 text-black-500 text-2xl font-bold mb-3">
+        User Profile
       </Text>
       {/* <Link href="/about" asChild>
         <TouchableOpacity className="bg-sky-500 py-2 px-3 rounded-md">
@@ -29,19 +29,13 @@ const about = () => {
       </Link> */}
 
       <TouchableOpacity
-        className="bg-green-500 py-2 px-3 rounded-md mb-3"
+        className="bg-green-500 py-2 px-3 rounded-md"
         onPress={() => router.push("/")}
       >
         <Text className="text-white">Go to Home</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        className="bg-green-500 py-2 px-3 rounded-md mb-3"
-        onPress={() => router.push("/user")}
-      >
-        <Text className="text-white">Go to User</Text>
       </TouchableOpacity>
     </Animated.View>
   );
 };
 
-export default about;
+export default user;

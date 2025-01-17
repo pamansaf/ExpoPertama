@@ -10,6 +10,7 @@ import Animated, {
   ZoomOut,
 } from "react-native-reanimated";
 import { useDrawerStatus } from "@react-navigation/drawer";
+import { StatusBar } from "expo-status-bar";
 
 const Home = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const Home = () => {
       exiting={ZoomOut.duration(300)}
       className="flex-1 justify-center items-center"
     >
+      <StatusBar style="auto" />
       {isDrawerOpen ? (
         <Text className="text-2xl text-green-500 font-bold">
           Drawer is open
@@ -50,6 +52,20 @@ const Home = () => {
         onPress={() => router.push("/tabs")}
       >
         <Text className="text-white">Go to Tab Screen</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        className="bg-slate-800 py-2 px-3 rounded-md mb-3"
+        onPress={() => router.push("/user")}
+      >
+        <Text className="text-white">Go to User</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        className="bg-pink-500 py-2 px-3 rounded-md mb-3"
+        onPress={() => router.push("/profile")}
+      >
+        <Text className="text-white">Go to User Profile</Text>
       </TouchableOpacity>
     </Animated.View>
   );
